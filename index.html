@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess the Animal - Educational Game</title>
+    <meta
+      name="description"
+      content="A fun and educational game where you guess the animal based on progressively revealed clues. Perfect for kids and nature lovers!"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Guess the Animal" />
+    <meta
+      property="og:description"
+      content="Can you guess the animal from the clues? Test your knowledge!"
+    />
+    <meta property="og:image" content="/vite.svg" />
+    <meta property="og:type" content="website" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div id="app">
+      <header>
+        <h1>Guess the Animal</h1>
+        <p>Read the clues. Guess the creature.</p>
+      </header>
+
+      <main class="game-container">
+        <div id="image-container" class="hidden">
+          <!-- Image injected here on win/loss -->
+        </div>
+
+        <div class="clues-section">
+          <h2>Clues</h2>
+          <ul id="clues-list">
+            <!-- Clues injected here -->
+          </ul>
+        </div>
+
+        <div class="input-section">
+          <input
+            type="text"
+            id="guess-input"
+            placeholder="Type your guess..."
+            autocomplete="off"
+          />
+          <button id="submit-btn">Guess</button>
+        </div>
+
+        <div
+          id="message-area"
+          class="message"
+          aria-live="polite"
+          aria-atomic="true"
+        ></div>
+
+        <button id="next-btn" class="hidden">Next Animal</button>
+        <button id="restart-btn" class="hidden">Play Again</button>
+      </main>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
