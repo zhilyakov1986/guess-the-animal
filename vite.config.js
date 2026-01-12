@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-    base: '/guess-the-animal/',
+    base: '/',
     build: {
         outDir: 'dist',
         assetsDir: 'assets',
