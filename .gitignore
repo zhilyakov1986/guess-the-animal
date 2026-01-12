@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Security & Local
+.env
+.env.*
+setup_ssh.md
