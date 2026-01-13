@@ -148,18 +148,20 @@ export default function App() {
           </Text>
         ) : null}
 
-        <View style={styles.choicesGrid}>
-          {options.map((option) => (
-            <TouchableOpacity
-              key={option.name}
-              style={[styles.choiceButton, getButtonStyle(option.name)]}
-              onPress={() => handleGuess(option.name)}
-              disabled={isGameOver || isGameWon || disabledOptions.includes(option.name)}
-            >
-              <Text style={styles.choiceButtonText}>{option.name}</Text>
-            </TouchableOpacity>
-          ))}
-        </View>
+        {!isGameOver && !isGameWon && (
+          <View style={styles.choicesGrid}>
+            {options.map((option) => (
+              <TouchableOpacity
+                key={option.name}
+                style={[styles.choiceButton, getButtonStyle(option.name)]}
+                onPress={() => handleGuess(option.name)}
+                disabled={disabledOptions.includes(option.name)}
+              >
+                <Text style={styles.choiceButtonText}>{option.name}</Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+        )}
 
         {(isGameOver || isGameWon) && (
           <View style={styles.controls}>
