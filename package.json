@@ -8,6 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest",
+    "ios": "cd ios_app && npm run ios",
     "lint": "eslint .",
     "format": "prettier --write ."
   },

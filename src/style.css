@@ -95,27 +95,50 @@ header p {
   }
 }
 
-.input-section {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 1.5rem;
+.choices-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
-input {
-  flex: 1;
-  padding: 1rem;
-  border-radius: 12px;
+.choice-btn {
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
   border: 2px solid var(--glass-border);
-  background: rgba(0, 0, 0, 0.2);
   color: white;
-  font-size: 1rem;
-  font-family: inherit;
-  transition: border-color 0.3s;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  text-transform: capitalize;
 }
 
-input:focus {
-  outline: none;
+.choice-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
   border-color: var(--primary);
+}
+
+.choice-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.btn-correct {
+  background: var(--primary) !important;
+  border-color: var(--primary-dark) !important;
+  color: white !important;
+}
+
+.btn-wrong {
+  background: #ef4444 !important;
+  border-color: #b91c1c !important;
+  color: white !important;
 }
 
 button {
