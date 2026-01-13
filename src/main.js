@@ -16,6 +16,11 @@ const imageContainer = document.getElementById('image-container');
 
 function updateClues() {
   cluesList.innerHTML = '';
+
+  if (gameState.isGameWon || gameState.isGameOver) {
+    return;
+  }
+
   const clues = gameState.getCluesToShow();
 
   clues.forEach((clue, i) => {

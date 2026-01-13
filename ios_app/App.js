@@ -131,12 +131,14 @@ export default function App() {
           )}
         </View>
 
-        <View style={styles.cluesContainer}>
-          <Text style={styles.sectionTitle}>Clues:</Text>
-          {clues.map((clue, index) => (
-            <Text key={index} style={styles.clueText}>• {clue}</Text>
-          ))}
-        </View>
+        {!isGameOver && !isGameWon && (
+          <View style={styles.cluesContainer}>
+            <Text style={styles.sectionTitle}>Clues:</Text>
+            {clues.map((clue, index) => (
+              <Text key={index} style={styles.clueText}>• {clue}</Text>
+            ))}
+          </View>
+        )}
 
         {message ? (
           <Text style={[
