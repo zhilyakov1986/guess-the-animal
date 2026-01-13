@@ -119,7 +119,9 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContent}>
-        <Text style={styles.title}>Guess the Animal</Text>
+        {!isGameOver && !isGameWon && (
+          <Text style={styles.title}>Guess the Animal</Text>
+        )}
 
         <View style={styles.card}>
           {showImage && currentAnimal ? (

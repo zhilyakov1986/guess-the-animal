@@ -7,6 +7,8 @@ const gameState = new GameState(animals);
 
 // DOM Elements
 const cluesList = document.getElementById('clues-list');
+const cluesSection = document.querySelector('.clues-section');
+const header = document.querySelector('header');
 // Removed input and submit btn
 const choicesContainer = document.getElementById('choices-container');
 const messageArea = document.getElementById('message-area');
@@ -18,8 +20,13 @@ function updateClues() {
   cluesList.innerHTML = '';
 
   if (gameState.isGameWon || gameState.isGameOver) {
+    cluesSection.classList.add('hidden');
+    header.classList.add('hidden');
     return;
   }
+
+  cluesSection.classList.remove('hidden');
+  header.classList.remove('hidden');
 
   const clues = gameState.getCluesToShow();
 
@@ -141,8 +148,10 @@ function resetUIState() {
   messageArea.className = 'message';
   imageContainer.innerHTML = '';
   imageContainer.classList.add('hidden');
+  imageContainer.classList.add('hidden');
   nextBtn.classList.add('hidden');
   restartBtn.classList.add('hidden');
+  header.classList.remove('hidden');
 }
 
 // Event Listeners
