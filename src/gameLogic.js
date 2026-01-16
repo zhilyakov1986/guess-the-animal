@@ -8,13 +8,29 @@ export class GameState {
     this.attempts = 0;
     this.isGameOver = false;
     this.isGameWon = false;
+    this.isGameWon = false;
+    this.seenIds = new Set();
     this.startNewGame();
   }
 
   startNewGame() {
+    // Filter out seen animals
+    let availableAnimals = this.animals
+      ? this.allAnimals.filter(a => !this.seenIds.has(a.id))
+      : this.allAnimals; // First run
+
+    // If we don't have enough animals for a full round (10), reset seenIds
+    if (availableAnimals.length < 10) {
+      this.seenIds.clear();
+      availableAnimals = this.allAnimals;
+    }
+
     // Shuffle and pick 10
-    const shuffled = [...this.allAnimals].sort(() => 0.5 - Math.random());
+    const shuffled = [...availableAnimals].sort(() => 0.5 - Math.random());
     this.animals = shuffled.slice(0, 10);
+
+    // Mark these as seen
+    this.animals.forEach(a => this.seenIds.add(a.id));
     this.currentIndex = 0;
     this.attempts = 0;
     this.isGameOver = false;

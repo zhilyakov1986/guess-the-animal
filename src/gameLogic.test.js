@@ -78,5 +78,41 @@ describe('GameState', () => {
     expect(game.attempts).toBe(0);
     expect(game.isGameOver).toBe(false);
     expect(game.animals.length).toBe(10);
+    expect(game.isGameOver).toBe(false);
+    expect(game.animals.length).toBe(10);
+  });
+
+  it('should not repeat animals in next round if enough animals exist', () => {
+    // Create 20 mock animals
+    const manyAnimals = Array.from({ length: 20 }, (_, i) => ({
+      id: `a${i}`,
+      name: `Animal${i}`,
+      clues: [],
+      image: ''
+    }));
+
+    const game = new GameState(manyAnimals);
+
+    // First round: 10 animals
+    const round1Ids = new Set(game.animals.map(a => a.id));
+    expect(round1Ids.size).toBe(10);
+
+    // Restart game -> should get the OTHER 10 animals
+    game.restart();
+    const round2Ids = new Set(game.animals.map(a => a.id));
+    expect(round2Ids.size).toBe(10);
+
+    // Intersection should be 0
+    let overlap = 0;
+    round1Ids.forEach(id => {
+      if (round2Ids.has(id)) overlap++;
+    });
+    expect(overlap).toBe(0);
+
+    // Restart again -> now we have used all 20, so it should reset and allow reuse
+    game.restart();
+    const round3Ids = new Set(game.animals.map(a => a.id));
+    expect(round3Ids.size).toBe(10);
+    // Overlap is now possible/likely
   });
 });
