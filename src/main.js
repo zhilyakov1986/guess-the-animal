@@ -164,4 +164,25 @@ nextBtn.addEventListener('click', nextLevel);
 restartBtn.addEventListener('click', initGame);
 
 // Start
-initGame();
+const landingPage = document.getElementById('landing-page');
+const app = document.getElementById('app');
+const startBtn = document.getElementById('start-btn');
+
+startBtn.addEventListener('click', () => {
+  landingPage.style.opacity = '0';
+  setTimeout(() => {
+    landingPage.classList.add('hidden');
+    app.classList.remove('hidden');
+    app.style.opacity = '0';
+    app.style.transition = 'opacity 0.5s ease';
+
+    // Trigger reflow
+    void app.offsetWidth;
+
+    app.style.opacity = '1';
+    initGame();
+  }, 500);
+});
+
+// Remove auto initGame() call as it's now triggered by button
+// initGame();
