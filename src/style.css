@@ -57,6 +57,10 @@ body {
   height: auto;
   filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
   animation: float 6s ease-in-out infinite;
+  border-radius: 20px;
+  /* In case of sharp edges */
+  mix-blend-mode: lighten;
+  /* Helps blend dark background if not perfect match */
 }
 
 @keyframes float {
