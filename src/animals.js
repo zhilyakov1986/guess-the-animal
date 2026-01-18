@@ -100,6 +100,16 @@ import sheepImg from './assets/sheep.png';
 import goatImg from './assets/goat.png';
 import cowImg from './assets/cow.png';
 import chickenImg from './assets/chicken.png';
+import duckImg from './assets/duck.png';
+import mouseImg from './assets/mouse.png';
+import ladybugImg from './assets/ladybug.png';
+import beeImg from './assets/bee.png';
+import antImg from './assets/ant.png';
+import snailImg from './assets/snail.png';
+import turkeyImg from './assets/turkey.png';
+import donkeyImg from './assets/donkey.png';
+import raccoonImg from './assets/raccoon.png';
+import sealImg from './assets/seal.png';
 
 export const animals = [
   {
@@ -1325,5 +1335,125 @@ export const animals = [
       "I cannot fly very well."
     ],
     image: chickenImg,
+  },
+  {
+    id: 'duck',
+    name: 'Duck',
+    clues: [
+      "I say 'Quack Quack'.",
+      "I have a beak.",
+      "I like to swim in the pond.",
+      "I have webbed feet.",
+      "I have feathers."
+    ],
+    image: duckImg,
+  },
+  {
+    id: 'mouse',
+    name: 'Mouse',
+    clues: [
+      "I say 'Squeak'.",
+      "I am very small.",
+      "I like to eat cheese.",
+      "I have big ears.",
+      "I have a long thin tail."
+    ],
+    image: mouseImg,
+  },
+  {
+    id: 'ladybug',
+    name: 'Ladybug',
+    clues: [
+      "I am a small beetle.",
+      "I am red with black spots.",
+      "I have six legs.",
+      "I can fly.",
+      "Gardeners love me."
+    ],
+    image: ladybugImg,
+  },
+  {
+    id: 'bee',
+    name: 'Bee',
+    clues: [
+      "I make honey.",
+      "I say 'Bzzzz'.",
+      "I visit flowers.",
+      "I am yellow and black.",
+      "I have a stinger."
+    ],
+    image: beeImg,
+  },
+  {
+    id: 'ant',
+    name: 'Ant',
+    clues: [
+      "I am very tiny.",
+      "I live in a colony.",
+      "I am very strong for my size.",
+      "I have six legs.",
+      "I can build hills."
+    ],
+    image: antImg,
+  },
+  {
+    id: 'snail',
+    name: 'Snail',
+    clues: [
+      "I carry my house on my back.",
+      "I move very slowly.",
+      "I leave a slime trail.",
+      "I have no legs.",
+      "I have two tentacles."
+    ],
+    image: snailImg,
+  },
+  {
+    id: 'turkey',
+    name: 'Turkey',
+    clues: [
+      "I say 'Gobble Gobble'.",
+      "I have big feathers.",
+      "People eat me on Thanksgiving.",
+      "I have a wattle on my neck.",
+      "I can run fast."
+    ],
+    image: turkeyImg,
+  },
+  {
+    id: 'donkey',
+    name: 'Donkey',
+    clues: [
+      "I look like a small horse.",
+      "I say 'Hee Haw'.",
+      "I have long ears.",
+      "I am very strong.",
+      "I help carry heavy things."
+    ],
+    image: donkeyImg,
+  },
+  {
+    id: 'raccoon',
+    name: 'Raccoon',
+    clues: [
+      "I have a black mask on my face.",
+      "I have a ringed tail.",
+      "I wash my food in water.",
+      "I am awake at night.",
+      "I have little hands."
+    ],
+    image: raccoonImg,
+  },
+  {
+    id: 'seal',
+    name: 'Seal',
+    clues: [
+      "I live in the ocean.",
+      "I have flippers.",
+      "I bark like a dog.",
+      "I like to eat fish.",
+      "I clap my flippers."
+    ],
+    image: sealImg,
   },
 ];
