@@ -120,7 +120,7 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContent}>
         {!isGameOver && !isGameWon && (
-          <Text style={styles.title}>Guess the Animal</Text>
+          <Text style={styles.title}>Wild Quest</Text>
         )}
 
         <View style={styles.card}>

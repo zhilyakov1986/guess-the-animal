@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Guess the Animal",
-    "slug": "guess-the-animal",
+    "name": "Wild Quest",
+    "slug": "wild-quest",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

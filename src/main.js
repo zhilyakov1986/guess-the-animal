@@ -86,10 +86,12 @@ function showResult() {
   } else {
     messageArea.textContent = `Game Over! The correct answer was ${currentAnimal.name}.`;
     messageArea.className = 'message error';
+    document.body.classList.add('game-over-body');
   }
 
   // Next or Restart buttons
-  if (gameState.currentIndex < gameState.animals.length - 1) {
+  // Next or Restart buttons
+  if (!gameState.isGameOver && gameState.currentIndex < gameState.animals.length - 1) {
     nextBtn.classList.remove('hidden');
   } else {
     restartBtn.textContent = gameState.isGameWon
@@ -146,6 +148,7 @@ function nextLevel() {
 function resetUIState() {
   messageArea.textContent = '';
   messageArea.className = 'message';
+  document.body.classList.remove('game-over-body');
   imageContainer.innerHTML = '';
   imageContainer.classList.add('hidden');
   imageContainer.classList.add('hidden');

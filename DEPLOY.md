@@ -1,4 +1,4 @@
-# Deploying "Guess the Animal"
+# Deploying "Wild Quest"
 
 Your app is built with **Vite** (Vanilla JS). It is a static site, meaning it can be hosted anywhere that serves static files.
 
