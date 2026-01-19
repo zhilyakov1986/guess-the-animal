@@ -1,6 +1,7 @@
 import './style.css';
 import { animals } from './animals.js';
 import { GameState } from './gameLogic.js';
+import confetti from 'canvas-confetti';
 
 // Initialize Game Logic
 const gameState = new GameState(animals);
@@ -84,6 +85,13 @@ function showResult() {
     messageArea.textContent = `Correct! It's a ${currentAnimal.name}!`;
     messageArea.className = 'message success';
     document.body.classList.add('game-won-body');
+
+    // Trigger confetti
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 }
+    });
   } else {
     messageArea.textContent = `Game Over! The correct answer was ${currentAnimal.name}.`;
     messageArea.className = 'message error';
