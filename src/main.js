@@ -83,6 +83,7 @@ function showResult() {
   if (gameState.isGameWon) {
     messageArea.textContent = `Correct! It's a ${currentAnimal.name}!`;
     messageArea.className = 'message success';
+    document.body.classList.add('game-won-body');
   } else {
     messageArea.textContent = `Game Over! The correct answer was ${currentAnimal.name}.`;
     messageArea.className = 'message error';
@@ -149,6 +150,7 @@ function resetUIState() {
   messageArea.textContent = '';
   messageArea.className = 'message';
   document.body.classList.remove('game-over-body');
+  document.body.classList.remove('game-won-body');
   imageContainer.innerHTML = '';
   imageContainer.classList.add('hidden');
   imageContainer.classList.add('hidden');

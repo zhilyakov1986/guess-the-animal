@@ -10,6 +10,7 @@
   --font-main: 'Outfit', sans-serif;
   --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   --bg-gradient-error: linear-gradient(135deg, #991b1b 0%, #450a0a 100%);
+  --bg-gradient-success: linear-gradient(135deg, #059669 0%, #064e3b 100%);
 }
 
 * {
@@ -32,6 +33,10 @@ body {
 
 .game-over-body {
   background: var(--bg-gradient-error);
+}
+
+.game-won-body {
+  background: var(--bg-gradient-success);
 }
 
 #landing-page {
